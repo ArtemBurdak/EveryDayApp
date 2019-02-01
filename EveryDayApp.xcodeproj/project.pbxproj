@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		694414541AF5F3D1DD30E8B0 /* Pods_EveryDayApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265ED6D9824BED491D2B17DA /* Pods_EveryDayApp.framework */; };
 		ACB4ABE721FE3BCB00720839 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ABE621FE3BCB00720839 /* AppDelegate.swift */; };
-		ACB4ABE921FE3BCB00720839 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ABE821FE3BCB00720839 /* ViewController.swift */; };
+		ACB4ABE921FE3BCB00720839 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ABE821FE3BCB00720839 /* WeatherVC.swift */; };
 		ACB4ABEC21FE3BCB00720839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABEA21FE3BCB00720839 /* Main.storyboard */; };
 		ACB4ABEE21FE3BCC00720839 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABED21FE3BCC00720839 /* Assets.xcassets */; };
 		ACB4ABF121FE3BCC00720839 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABEF21FE3BCC00720839 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		241C9272CA47D64FFFDB1271 /* Pods-EveryDayApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EveryDayApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp.release.xcconfig"; sourceTree = "<group>"; };
+		265ED6D9824BED491D2B17DA /* Pods_EveryDayApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EveryDayApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74ACD481B930E4AD65970DC7 /* Pods-EveryDayApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EveryDayApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp.debug.xcconfig"; sourceTree = "<group>"; };
 		ACB4ABE321FE3BCB00720839 /* EveryDayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EveryDayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB4ABE621FE3BCB00720839 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACB4ABE821FE3BCB00720839 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACB4ABE821FE3BCB00720839 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		ACB4ABEB21FE3BCB00720839 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACB4ABED21FE3BCC00720839 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB4ABF021FE3BCC00720839 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				694414541AF5F3D1DD30E8B0 /* Pods_EveryDayApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85F10D1CA16EAC4F834FDA6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74ACD481B930E4AD65970DC7 /* Pods-EveryDayApp.debug.xcconfig */,
+				241C9272CA47D64FFFDB1271 /* Pods-EveryDayApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ACB4ABDA21FE3BCB00720839 = {
 			isa = PBXGroup;
 			children = (
 				ACB4ABE521FE3BCB00720839 /* EveryDayApp */,
 				ACB4ABE421FE3BCB00720839 /* Products */,
+				85F10D1CA16EAC4F834FDA6B /* Pods */,
+				C032C740A46E446FF9D42C8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +70,38 @@
 		ACB4ABE521FE3BCB00720839 /* EveryDayApp */ = {
 			isa = PBXGroup;
 			children = (
-				ACB4ABE621FE3BCB00720839 /* AppDelegate.swift */,
-				ACB4ABE821FE3BCB00720839 /* ViewController.swift */,
-				ACB4ABEA21FE3BCB00720839 /* Main.storyboard */,
+				ACB4ABF821FE3C5200720839 /* View */,
+				ACB4ABF921FE3C6500720839 /* Controller */,
 				ACB4ABED21FE3BCC00720839 /* Assets.xcassets */,
 				ACB4ABEF21FE3BCC00720839 /* LaunchScreen.storyboard */,
 				ACB4ABF221FE3BCC00720839 /* Info.plist */,
 			);
 			path = EveryDayApp;
+			sourceTree = "<group>";
+		};
+		ACB4ABF821FE3C5200720839 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACB4ABEA21FE3BCB00720839 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ACB4ABF921FE3C6500720839 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ACB4ABE821FE3BCB00720839 /* WeatherVC.swift */,
+				ACB4ABE621FE3BCB00720839 /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C032C740A46E446FF9D42C8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				265ED6D9824BED491D2B17DA /* Pods_EveryDayApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +111,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACB4ABF521FE3BCC00720839 /* Build configuration list for PBXNativeTarget "EveryDayApp" */;
 			buildPhases = (
+				A88070C9F7B44AE99E12DC88 /* [CP] Check Pods Manifest.lock */,
 				ACB4ABDF21FE3BCB00720839 /* Sources */,
 				ACB4ABE021FE3BCB00720839 /* Frameworks */,
 				ACB4ABE121FE3BCB00720839 /* Resources */,
+				DEF700DBE684E8CD3B05FCD3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +172,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A88070C9F7B44AE99E12DC88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EveryDayApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEF700DBE684E8CD3B05FCD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ACB4ABDF21FE3BCB00720839 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACB4ABE921FE3BCB00720839 /* ViewController.swift in Sources */,
+				ACB4ABE921FE3BCB00720839 /* WeatherVC.swift in Sources */,
 				ACB4ABE721FE3BCB00720839 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +373,7 @@
 		};
 		ACB4ABF621FE3BCC00720839 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74ACD481B930E4AD65970DC7 /* Pods-EveryDayApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +392,7 @@
 		};
 		ACB4ABF721FE3BCC00720839 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241C9272CA47D64FFFDB1271 /* Pods-EveryDayApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
