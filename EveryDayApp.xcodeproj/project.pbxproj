@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		694414541AF5F3D1DD30E8B0 /* Pods_EveryDayApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265ED6D9824BED491D2B17DA /* Pods_EveryDayApp.framework */; };
+		AC0983C9220C731700068805 /* WeatherStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0983C8220C731700068805 /* WeatherStruct.swift */; };
 		AC620B25220A1A7C00D48A64 /* Utilits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC620B24220A1A7C00D48A64 /* Utilits.swift */; };
 		AC8786FE220A2D890000073E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8786FD220A2D890000073E /* Constants.swift */; };
 		AC9F05072205936A00CD4184 /* CurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F05062205936A00CD4184 /* CurrencyVC.swift */; };
@@ -22,6 +23,7 @@
 		241C9272CA47D64FFFDB1271 /* Pods-EveryDayApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EveryDayApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp.release.xcconfig"; sourceTree = "<group>"; };
 		265ED6D9824BED491D2B17DA /* Pods_EveryDayApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EveryDayApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74ACD481B930E4AD65970DC7 /* Pods-EveryDayApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EveryDayApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AC0983C8220C731700068805 /* WeatherStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStruct.swift; sourceTree = "<group>"; };
 		AC620B24220A1A7C00D48A64 /* Utilits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilits.swift; sourceTree = "<group>"; };
 		AC8786FD220A2D890000073E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC9F05062205936A00CD4184 /* CurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVC.swift; sourceTree = "<group>"; };
@@ -55,6 +57,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AC0983C7220C72AE00068805 /* WeatherModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC0983C8220C731700068805 /* WeatherStruct.swift */,
+			);
+			path = WeatherModel;
+			sourceTree = "<group>";
+		};
+		AC5B0C2F220CEDB80072913B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC5B0C30220CEDDB0072913B /* Constants */,
+				AC0983C7220C72AE00068805 /* WeatherModel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC5B0C30220CEDDB0072913B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AC8786FD220A2D890000073E /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		AC5B0C31220CEDFC0072913B /* CurrencyController */ = {
+			isa = PBXGroup;
+			children = (
+				AC9F05062205936A00CD4184 /* CurrencyVC.swift */,
+			);
+			path = CurrencyController;
+			sourceTree = "<group>";
+		};
 		ACB4ABDA21FE3BCB00720839 = {
 			isa = PBXGroup;
 			children = (
@@ -76,8 +111,11 @@
 		ACB4ABE521FE3BCB00720839 /* EveryDayApp */ = {
 			isa = PBXGroup;
 			children = (
+				ACB4ABE621FE3BCB00720839 /* AppDelegate.swift */,
 				ACB4ABF821FE3C5200720839 /* View */,
-				ACB4ABF921FE3C6500720839 /* Controller */,
+				AC5B0C31220CEDFC0072913B /* CurrencyController */,
+				ACB4ABF921FE3C6500720839 /* WeatherController */,
+				AC5B0C2F220CEDB80072913B /* Models */,
 				ACB4ABED21FE3BCC00720839 /* Assets.xcassets */,
 				AC620B24220A1A7C00D48A64 /* Utilits.swift */,
 				ACB4ABEF21FE3BCC00720839 /* LaunchScreen.storyboard */,
@@ -94,15 +132,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		ACB4ABF921FE3C6500720839 /* Controller */ = {
+		ACB4ABF921FE3C6500720839 /* WeatherController */ = {
 			isa = PBXGroup;
 			children = (
 				ACB4ABE821FE3BCB00720839 /* WeatherVC.swift */,
-				AC9F05062205936A00CD4184 /* CurrencyVC.swift */,
-				AC8786FD220A2D890000073E /* Constants.swift */,
-				ACB4ABE621FE3BCB00720839 /* AppDelegate.swift */,
 			);
-			path = Controller;
+			path = WeatherController;
 			sourceTree = "<group>";
 		};
 		C032C740A46E446FF9D42C8E /* Frameworks */ = {
@@ -242,6 +277,7 @@
 				ACB4ABE921FE3BCB00720839 /* WeatherVC.swift in Sources */,
 				AC620B25220A1A7C00D48A64 /* Utilits.swift in Sources */,
 				ACB4ABE721FE3BCB00720839 /* AppDelegate.swift in Sources */,
+				AC0983C9220C731700068805 /* WeatherStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,7 +55,7 @@ class CurrencyVC: UIViewController {
         DispatchQueue.global(qos :.background).async {
 
             //Переводим полученый urlString в URL
-            guard let url:URL = URL(string: urlString) else {return}
+            guard let url: URL = URL(string: urlString) else {return}
 
             //Используем созданный URL
             if let data = try? Data(contentsOf: url) {
