@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		694414541AF5F3D1DD30E8B0 /* Pods_EveryDayApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265ED6D9824BED491D2B17DA /* Pods_EveryDayApp.framework */; };
 		AC0983C9220C731700068805 /* WeatherStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0983C8220C731700068805 /* WeatherStruct.swift */; };
+		AC5B0C34220DE5D40072913B /* ToDoListTableVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B0C33220DE5D40072913B /* ToDoListTableVCTableViewController.swift */; };
 		AC620B25220A1A7C00D48A64 /* Utilits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC620B24220A1A7C00D48A64 /* Utilits.swift */; };
 		AC8786FE220A2D890000073E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8786FD220A2D890000073E /* Constants.swift */; };
 		AC9F05072205936A00CD4184 /* CurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F05062205936A00CD4184 /* CurrencyVC.swift */; };
@@ -24,6 +25,7 @@
 		265ED6D9824BED491D2B17DA /* Pods_EveryDayApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EveryDayApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74ACD481B930E4AD65970DC7 /* Pods-EveryDayApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EveryDayApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AC0983C8220C731700068805 /* WeatherStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStruct.swift; sourceTree = "<group>"; };
+		AC5B0C33220DE5D40072913B /* ToDoListTableVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableVCTableViewController.swift; sourceTree = "<group>"; };
 		AC620B24220A1A7C00D48A64 /* Utilits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilits.swift; sourceTree = "<group>"; };
 		AC8786FD220A2D890000073E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC9F05062205936A00CD4184 /* CurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVC.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 			path = CurrencyController;
 			sourceTree = "<group>";
 		};
+		AC5B0C32220DE5880072913B /* ToDoListController */ = {
+			isa = PBXGroup;
+			children = (
+				AC5B0C33220DE5D40072913B /* ToDoListTableVCTableViewController.swift */,
+			);
+			path = ToDoListController;
+			sourceTree = "<group>";
+		};
 		ACB4ABDA21FE3BCB00720839 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 				ACB4ABF821FE3C5200720839 /* View */,
 				AC5B0C31220CEDFC0072913B /* CurrencyController */,
 				ACB4ABF921FE3C6500720839 /* WeatherController */,
+				AC5B0C32220DE5880072913B /* ToDoListController */,
 				AC5B0C2F220CEDB80072913B /* Models */,
 				ACB4ABED21FE3BCC00720839 /* Assets.xcassets */,
 				AC620B24220A1A7C00D48A64 /* Utilits.swift */,
@@ -275,6 +286,7 @@
 				AC8786FE220A2D890000073E /* Constants.swift in Sources */,
 				AC9F05072205936A00CD4184 /* CurrencyVC.swift in Sources */,
 				ACB4ABE921FE3BCB00720839 /* WeatherVC.swift in Sources */,
+				AC5B0C34220DE5D40072913B /* ToDoListTableVCTableViewController.swift in Sources */,
 				AC620B25220A1A7C00D48A64 /* Utilits.swift in Sources */,
 				ACB4ABE721FE3BCB00720839 /* AppDelegate.swift in Sources */,
 				AC0983C9220C731700068805 /* WeatherStruct.swift in Sources */,

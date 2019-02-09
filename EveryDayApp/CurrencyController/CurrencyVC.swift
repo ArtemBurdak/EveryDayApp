@@ -150,6 +150,7 @@ class CurrencyVC: UIViewController {
 
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
+            textField.placeholder = "1 $"
             textField.keyboardType = UIKeyboardType.decimalPad
         }
 
