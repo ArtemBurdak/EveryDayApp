@@ -12,7 +12,7 @@ import Alamofire
 
 
 
-class WeatherVC: UIViewController, CLLocationManagerDelegate {
+class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate {
 
     @IBOutlet weak var backgroundWeather: UIImageView!
     @IBOutlet weak var weatherConditionLbl: UILabel!
@@ -28,8 +28,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        guard let url = URL(string: WEATHER_URL) else { return }
 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
@@ -55,10 +53,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
-        cityLabel.text = "Can not find your location"
-    }
-
-    @IBAction func chngeCityBtn(_ sender: UIButton) {
+        cityLabel.text = "Location error"
     }
 
     func getWeatherData(url: String, parameters: [String : String]) {
@@ -72,10 +67,12 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     func showError() {
-        let ac = UIAlertController(title: "Loading error", message: "Probem whith loading", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Loading error", message: "Probem with loading", preferredStyle: .alert)
         ac.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { (_) in
         }))
         self.present(ac, animated: true)
+//        cityLabel.text = "Loading error"
+        cityLabel.textColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
     }
 
     func parce(json: Data) {
@@ -92,8 +89,19 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
             cityLabel.text = self.weatherJson?.name
             weatherConditionLbl.text = self.weatherJson?.weather.first?.description
             guard let tempResult = self.weatherJson?.main.temp else { return }
-            tmpLbl.text = "\(Int(tempResult - 273.5)) °C"
+            tmpLbl.text = "\(Int(tempResult - 273.15)) °C"
 
+        }
+    }
+    func newCityName(city: String) {
+        let parameters: [String: String] = ["q": city, "appid": APP_ID]
+        getWeatherData(url: WEATHER_URL, parameters: parameters)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "changeCity" {
+            let destinationVC = segue.destination as! ChangeCityVC
+            destinationVC.delegate = self
         }
     }
 }

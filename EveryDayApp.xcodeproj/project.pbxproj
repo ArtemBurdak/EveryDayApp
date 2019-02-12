@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		694414541AF5F3D1DD30E8B0 /* Pods_EveryDayApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265ED6D9824BED491D2B17DA /* Pods_EveryDayApp.framework */; };
 		AC0983C9220C731700068805 /* WeatherStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0983C8220C731700068805 /* WeatherStruct.swift */; };
-		AC5B0C34220DE5D40072913B /* ToDoListTableVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B0C33220DE5D40072913B /* ToDoListTableVCTableViewController.swift */; };
+		AC5B0C34220DE5D40072913B /* ToDoListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B0C33220DE5D40072913B /* ToDoListTableVC.swift */; };
+		AC5B0C37220F005E0072913B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B0C36220F005E0072913B /* Item.swift */; };
 		AC620B25220A1A7C00D48A64 /* Utilits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC620B24220A1A7C00D48A64 /* Utilits.swift */; };
 		AC8786FE220A2D890000073E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8786FD220A2D890000073E /* Constants.swift */; };
 		AC9F05072205936A00CD4184 /* CurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F05062205936A00CD4184 /* CurrencyVC.swift */; };
@@ -18,6 +19,7 @@
 		ACB4ABEC21FE3BCB00720839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABEA21FE3BCB00720839 /* Main.storyboard */; };
 		ACB4ABEE21FE3BCC00720839 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABED21FE3BCC00720839 /* Assets.xcassets */; };
 		ACB4ABF121FE3BCC00720839 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABEF21FE3BCC00720839 /* LaunchScreen.storyboard */; };
+		ACD3D2B02212F4DB00A73713 /* ChangeCityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3D2AF2212F4DB00A73713 /* ChangeCityVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,8 @@
 		265ED6D9824BED491D2B17DA /* Pods_EveryDayApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EveryDayApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74ACD481B930E4AD65970DC7 /* Pods-EveryDayApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EveryDayApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AC0983C8220C731700068805 /* WeatherStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStruct.swift; sourceTree = "<group>"; };
-		AC5B0C33220DE5D40072913B /* ToDoListTableVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableVCTableViewController.swift; sourceTree = "<group>"; };
+		AC5B0C33220DE5D40072913B /* ToDoListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableVC.swift; sourceTree = "<group>"; };
+		AC5B0C36220F005E0072913B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AC620B24220A1A7C00D48A64 /* Utilits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilits.swift; sourceTree = "<group>"; };
 		AC8786FD220A2D890000073E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC9F05062205936A00CD4184 /* CurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVC.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		ACB4ABED21FE3BCC00720839 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB4ABF021FE3BCC00720839 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB4ABF221FE3BCC00720839 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACD3D2AF2212F4DB00A73713 /* ChangeCityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		AC5B0C2F220CEDB80072913B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AC5B0C35220F00060072913B /* ToDoList */,
 				AC5B0C30220CEDDB0072913B /* Constants */,
 				AC0983C7220C72AE00068805 /* WeatherModel */,
 			);
@@ -95,9 +100,17 @@
 		AC5B0C32220DE5880072913B /* ToDoListController */ = {
 			isa = PBXGroup;
 			children = (
-				AC5B0C33220DE5D40072913B /* ToDoListTableVCTableViewController.swift */,
+				AC5B0C33220DE5D40072913B /* ToDoListTableVC.swift */,
 			);
 			path = ToDoListController;
+			sourceTree = "<group>";
+		};
+		AC5B0C35220F00060072913B /* ToDoList */ = {
+			isa = PBXGroup;
+			children = (
+				AC5B0C36220F005E0072913B /* Item.swift */,
+			);
+			path = ToDoList;
 			sourceTree = "<group>";
 		};
 		ACB4ABDA21FE3BCB00720839 = {
@@ -124,7 +137,7 @@
 				ACB4ABE621FE3BCB00720839 /* AppDelegate.swift */,
 				ACB4ABF821FE3C5200720839 /* View */,
 				AC5B0C31220CEDFC0072913B /* CurrencyController */,
-				ACB4ABF921FE3C6500720839 /* WeatherController */,
+				ACB4ABF921FE3C6500720839 /* WeatherControllers */,
 				AC5B0C32220DE5880072913B /* ToDoListController */,
 				AC5B0C2F220CEDB80072913B /* Models */,
 				ACB4ABED21FE3BCC00720839 /* Assets.xcassets */,
@@ -143,12 +156,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		ACB4ABF921FE3C6500720839 /* WeatherController */ = {
+		ACB4ABF921FE3C6500720839 /* WeatherControllers */ = {
 			isa = PBXGroup;
 			children = (
 				ACB4ABE821FE3BCB00720839 /* WeatherVC.swift */,
+				ACD3D2AF2212F4DB00A73713 /* ChangeCityVC.swift */,
 			);
-			path = WeatherController;
+			path = WeatherControllers;
 			sourceTree = "<group>";
 		};
 		C032C740A46E446FF9D42C8E /* Frameworks */ = {
@@ -286,10 +300,12 @@
 				AC8786FE220A2D890000073E /* Constants.swift in Sources */,
 				AC9F05072205936A00CD4184 /* CurrencyVC.swift in Sources */,
 				ACB4ABE921FE3BCB00720839 /* WeatherVC.swift in Sources */,
-				AC5B0C34220DE5D40072913B /* ToDoListTableVCTableViewController.swift in Sources */,
+				AC5B0C34220DE5D40072913B /* ToDoListTableVC.swift in Sources */,
 				AC620B25220A1A7C00D48A64 /* Utilits.swift in Sources */,
+				ACD3D2B02212F4DB00A73713 /* ChangeCityVC.swift in Sources */,
 				ACB4ABE721FE3BCB00720839 /* AppDelegate.swift in Sources */,
 				AC0983C9220C731700068805 /* WeatherStruct.swift in Sources */,
+				AC5B0C37220F005E0072913B /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

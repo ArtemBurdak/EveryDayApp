@@ -1,5 +1,5 @@
 //
-//  ToDoListTableVCTableViewController.swift
+//  ToDoListTableVC.swift
 //  EveryDayApp
 //
 //  Created by Artem on 2/8/19.
@@ -8,35 +8,47 @@
 
 import UIKit
 
-class ToDoListTableVCTableViewController: UITableViewController {
+class ToDoListTableVC: UITableViewController {
 
-    var aimArray = ["kk;m", "epmewfm", "ml;;lm"]
+    var aimArray = [Item]()
 
     let defoults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let aims = defoults.array(forKey: Constants.toDoListKey) as? [String] {
-            aimArray = aims
-        }
-        
+        var newItem = Item()
+        newItem.title = ""
+
+//        aimArray.append("")
+
+//        if let aims = defoults.array(forKey: Constants.toDoListKey) as? [String] {
+//            aimArray = aims
+//        }
+
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return aimArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath)
 //        let aim = aimArray[indexPath.row]
-        cell.textLabel?.text = aimArray[indexPath.row]
+        cell.textLabel?.text = aimArray[indexPath.row].title
+
+        if aimArray[indexPath.row].done == true {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
 
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        aimArray[indexPath.row].done = !aimArray[indexPath.row].done
 
+        aimArray[indexPath.row].done = !aimArray[indexPath.row].done
+
+        tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -50,7 +62,10 @@ class ToDoListTableVCTableViewController: UITableViewController {
             textField.placeholder = "lose 2 kilos"
         }
         alert.addAction(UIAlertAction(title: "Add aim", style: .default, handler: { [weak alert] (_) in
-            self.aimArray.append(textField.text!)
+
+            var newItem = Item()
+            newItem.title = textField.text!
+            self.aimArray.append(newItem)
 
             self.defoults.set(self.aimArray, forKey: Constants.toDoListKey)
             self.tableView.reloadData()
