@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		694414541AF5F3D1DD30E8B0 /* Pods_EveryDayApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265ED6D9824BED491D2B17DA /* Pods_EveryDayApp.framework */; };
 		AC0983C9220C731700068805 /* WeatherStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0983C8220C731700068805 /* WeatherStruct.swift */; };
+		AC27030022146D76005364BB /* SwipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2702FF22146D76005364BB /* SwipeVC.swift */; };
 		AC5B0C34220DE5D40072913B /* ToDoListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B0C33220DE5D40072913B /* ToDoListTableVC.swift */; };
 		AC5B0C37220F005E0072913B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B0C36220F005E0072913B /* Item.swift */; };
 		AC620B25220A1A7C00D48A64 /* Utilits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC620B24220A1A7C00D48A64 /* Utilits.swift */; };
@@ -27,6 +28,7 @@
 		265ED6D9824BED491D2B17DA /* Pods_EveryDayApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EveryDayApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74ACD481B930E4AD65970DC7 /* Pods-EveryDayApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EveryDayApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AC0983C8220C731700068805 /* WeatherStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStruct.swift; sourceTree = "<group>"; };
+		AC2702FF22146D76005364BB /* SwipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeVC.swift; sourceTree = "<group>"; };
 		AC5B0C33220DE5D40072913B /* ToDoListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableVC.swift; sourceTree = "<group>"; };
 		AC5B0C36220F005E0072913B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AC620B24220A1A7C00D48A64 /* Utilits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilits.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		AC5B0C2F220CEDB80072913B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AC2702FF22146D76005364BB /* SwipeVC.swift */,
 				AC5B0C35220F00060072913B /* ToDoList */,
 				AC5B0C30220CEDDB0072913B /* Constants */,
 				AC0983C7220C72AE00068805 /* WeatherModel */,
@@ -274,16 +277,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeVC/SwipeVC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeVC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -298,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC8786FE220A2D890000073E /* Constants.swift in Sources */,
+				AC27030022146D76005364BB /* SwipeVC.swift in Sources */,
 				AC9F05072205936A00CD4184 /* CurrencyVC.swift in Sources */,
 				ACB4ABE921FE3BCB00720839 /* WeatherVC.swift in Sources */,
 				AC5B0C34220DE5D40072913B /* ToDoListTableVC.swift in Sources */,

@@ -10,8 +10,6 @@ import UIKit
 import CoreLocation
 import Alamofire
 
-
-
 class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate {
 
     @IBOutlet weak var backgroundWeather: UIImageView!
@@ -33,7 +31,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -45,7 +42,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate
             let longitude = String(location.coordinate.longitude)
 
             let parameters: [String : String] = ["lat" : latitude, "lon" : longitude, "appid" : APP_ID]
-            print(parameters)
+//            print(parameters)
 
             getWeatherData(url: WEATHER_URL, parameters : parameters)
         }
@@ -71,7 +68,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate
         ac.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { (_) in
         }))
         self.present(ac, animated: true)
-//        cityLabel.text = "Loading error"
         cityLabel.textColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
     }
 
@@ -93,9 +89,9 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate
 
         }
     }
-    func newCityName(city: String) {
-        let parameters: [String: String] = ["q": city, "appid": APP_ID]
-        getWeatherData(url: WEATHER_URL, parameters: parameters)
+
+    func newCityName(data: Data) {
+        parce(json: data)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -29,13 +29,18 @@ class CurrencyVC: UIViewController {
     @IBOutlet weak var rubLabel: UILabel!
     @IBOutlet weak var updateLabel: UILabel!
     @IBOutlet weak var multiplierBtn: UIButton!
+    @IBOutlet weak var updateLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var updateBtnConstraint: NSLayoutConstraint!
 
+    var tabBarHeigh: CGFloat?
     var currency: Currency?
 
     var multiplierUSD: Double = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        changeConstraints()
 
         if let data = UserDefaults.standard.value(forKey: Constants.storedCurrencyKey) as? Data {
             if let tempCurrency = try? PropertyListDecoder().decode(Currency.self, from: data) {
@@ -170,5 +175,11 @@ class CurrencyVC: UIViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+
+    func changeConstraints() {
+        updateLabelConstraint.constant = (tabBarHeigh ?? 0) + 8
+        updateBtnConstraint.constant = (tabBarHeigh ?? 0) + 8
+        view.layoutIfNeeded()
     }
 }
