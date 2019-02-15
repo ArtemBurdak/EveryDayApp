@@ -12,10 +12,12 @@ import Alamofire
 
 class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate {
 
-    @IBOutlet weak var backgroundWeather: UIImageView!
+    @IBOutlet weak var imageWeatherStatus: UIImageView!
     @IBOutlet weak var weatherConditionLbl: UILabel!
     @IBOutlet weak var tmpLbl: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var backgroundDayTimeImage: UIImageView!
+    
 
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
     let APP_ID = "185207b6e5f17e147d1a452b2faecae0"
@@ -42,7 +44,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate
             let longitude = String(location.coordinate.longitude)
 
             let parameters: [String : String] = ["lat" : latitude, "lon" : longitude, "appid" : APP_ID]
-//            print(parameters)
 
             getWeatherData(url: WEATHER_URL, parameters : parameters)
         }
@@ -78,17 +79,23 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate
             weatherJson = weaterData
             print(weatherJson as Any)
 
-//            DispatchQueue.main.async { Deside if I need this line
+            DispatchQueue.main.async {
 
                 guard let imageName = self.weatherJson?.weather.first?.icon else { return }
-                self.backgroundWeather.image = UIImage.init(named: imageName)
-            cityLabel.text = self.weatherJson?.name
-            weatherConditionLbl.text = self.weatherJson?.weather.first?.description
-            guard let tempResult = self.weatherJson?.main.temp else { return }
-            tmpLbl.text = "\(Int(tempResult - 273.15)) °C"
+                self.imageWeatherStatus.image = UIImage.init(named: imageName)
 
+                if imageName.contains("n") {
+                    self.backgroundDayTimeImage.image = UIImage.init(named: "night")
+                } else {
+                    self.backgroundDayTimeImage.image = UIImage.init(named: "Day")
+                }
+                self.cityLabel.text = self.weatherJson?.name
+                self.weatherConditionLbl.text = self.weatherJson?.weather.first?.description
+                guard let tempResult = self.weatherJson?.main.temp else { return }
+                self.tmpLbl.text = "\(Int(tempResult - 273.15)) °C"
+                }
+            }
         }
-    }
 
     func newCityName(data: Data) {
         parce(json: data)

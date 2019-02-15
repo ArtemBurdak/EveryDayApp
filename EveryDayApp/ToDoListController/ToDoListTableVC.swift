@@ -10,47 +10,49 @@ import UIKit
 
 class ToDoListTableVC: UITableViewController {
 
-    var aimArray = [Item]()
+    var items = [Item]()
 
-    let defoults = UserDefaults.standard
-
-    var tabBarHeigh: CGFloat?
+//    let defoults = UserDefaults.standard
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.Plist")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-
         var newItem = Item()
-        newItem.title = ""
+        newItem.title = "kjkbjkbk"
+        items.append(newItem)
 
-//        aimArray.append("")
-
-//        if let aims = defoults.array(forKey: Constants.toDoListKey) as? [String] {
-//            aimArray = aims
+//        if let items = defoults.array(forKey: Constants.toDoListKey) as? [Item] {
+//            itemArray = items
 //        }
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(items), forKey: "items")
 
+        if let data = UserDefaults.standard.value(forKey:"items") as? Data {
+            let items = try? PropertyListDecoder().decode(Array<Item>.self, from: data)
+        }
     }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return aimArray.count
+        return items.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath)
-//        let aim = aimArray[indexPath.row]
-        cell.textLabel?.text = aimArray[indexPath.row].title
 
-        if aimArray[indexPath.row].done == true {
+        let item = items[indexPath.row]
+        cell.textLabel?.text = item.title
+
+        if item.done == true {
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none
         }
         return cell
-
     }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        aimArray[indexPath.row].done = !aimArray[indexPath.row].done
+        items[indexPath.row].done = !items[indexPath.row].done
 
         tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
@@ -62,18 +64,23 @@ class ToDoListTableVC: UITableViewController {
 
         let alert = UIAlertController(title: "You have new aim?", message: "Set it here!", preferredStyle: .alert)
 
-        alert.addTextField { (textField) in
-            textField.placeholder = "lose 2 kilos"
-        }
-        alert.addAction(UIAlertAction(title: "Add aim", style: .default, handler: { [weak alert] (_) in
+        let action = UIAlertAction(title: "Add aim", style: .default) { (action) in
 
             var newItem = Item()
             newItem.title = textField.text!
-            self.aimArray.append(newItem)
 
-            self.defoults.set(self.aimArray, forKey: Constants.toDoListKey)
+            self.items.append(newItem)
+
             self.tableView.reloadData()
-        }))
+        }
+
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "lose 2 kilos"
+            textField = alertTextField
+        }
+
+        alert.addAction(action)
+
         present(alert, animated: true, completion: nil)
     }
 }

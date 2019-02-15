@@ -78,18 +78,19 @@
 			children = (
 				AC2702FF22146D76005364BB /* SwipeVC.swift */,
 				AC5B0C35220F00060072913B /* ToDoList */,
-				AC5B0C30220CEDDB0072913B /* Constants */,
+				AC5B0C30220CEDDB0072913B /* Constants and Utilits */,
 				AC0983C7220C72AE00068805 /* WeatherModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		AC5B0C30220CEDDB0072913B /* Constants */ = {
+		AC5B0C30220CEDDB0072913B /* Constants and Utilits */ = {
 			isa = PBXGroup;
 			children = (
 				AC8786FD220A2D890000073E /* Constants.swift */,
+				AC620B24220A1A7C00D48A64 /* Utilits.swift */,
 			);
-			path = Constants;
+			path = "Constants and Utilits";
 			sourceTree = "<group>";
 		};
 		AC5B0C31220CEDFC0072913B /* CurrencyController */ = {
@@ -144,7 +145,6 @@
 				AC5B0C32220DE5880072913B /* ToDoListController */,
 				AC5B0C2F220CEDB80072913B /* Models */,
 				ACB4ABED21FE3BCC00720839 /* Assets.xcassets */,
-				AC620B24220A1A7C00D48A64 /* Utilits.swift */,
 				ACB4ABEF21FE3BCC00720839 /* LaunchScreen.storyboard */,
 				ACB4ABF221FE3BCC00720839 /* Info.plist */,
 			);
@@ -277,6 +277,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Disk/Disk.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeVC/SwipeVC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -284,6 +285,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Disk.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeVC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
