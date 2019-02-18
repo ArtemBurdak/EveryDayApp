@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.8.0)
+  - Disk (0.4.0)
+  - SwipeVC (0.2.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - Disk
+  - SwipeVC
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Disk
+    - SwipeVC
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Disk: ef2956657d5bb56034b38b29b352170165226440
+  SwipeVC: cb182db641a0fc20ebe829cd269b85a196fa1e90
+
+PODFILE CHECKSUM: 0972399b3c6d72f1a5046ee2663e2e1543656e5b
+
+COCOAPODS: 1.5.3

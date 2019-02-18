@@ -1,0 +1,6 @@
+framework module SwipeVC {
+  umbrella header "SwipeVC-umbrella.h"
+
+  export *
+  module * { export * }
+}
