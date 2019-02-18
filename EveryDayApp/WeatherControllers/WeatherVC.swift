@@ -30,7 +30,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate
         super.viewDidLoad()
 
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
