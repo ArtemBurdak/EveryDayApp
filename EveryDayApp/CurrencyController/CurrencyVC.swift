@@ -56,13 +56,12 @@ class CurrencyVC: UIViewController {
 
     func getJSONData(urlString: String) {
 
-        //использование фонового потока
         DispatchQueue.global(qos :.background).async {
 
-            //Переводим полученый urlString в URL
+            //urlString converting to URL
             guard let url: URL = URL(string: urlString) else {return}
 
-            //Используем созданный URL
+            //Using created URL
             if let data = try? Data(contentsOf: url) {
                 self.parce(json: data)
                 return
@@ -102,7 +101,7 @@ class CurrencyVC: UIViewController {
     }
 
     func updateUI(curency: Currency) {
-        //выводим обновление UI элементнов в главный поток
+
         DispatchQueue.main.async {
 
             let usdUsd = abs(self.multiplierUSD * (self.currency?.quotes.USDUAH ?? 0))
@@ -150,16 +149,13 @@ class CurrencyVC: UIViewController {
     }
 
     func setMultiply(){
-        //1. Create the alert controller.
         let alert = UIAlertController(title: "Set multiplier", message: "Enter your ammount of $", preferredStyle: .alert)
 
-        //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
             textField.placeholder = "1 $"
             textField.keyboardType = UIKeyboardType.decimalPad
         }
 
-        // 3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
             self.multiplierUSD = Double(textField!.text ?? "1.0") ?? 1
@@ -169,7 +165,6 @@ class CurrencyVC: UIViewController {
 
         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel))
 
-        // 4. Present the alert.
         self.present(alert, animated: true, completion: nil)
     }
 
