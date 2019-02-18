@@ -381,6 +381,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.8560563325881958" green="0.90112948417663574" blue="0.98164635896682739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="koq-wA-6cd">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -390,6 +391,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <items>
                                         <navigationItem title="Title" id="Rhs-tj-KvE">
+                                            <barButtonItem key="leftBarButtonItem" systemItem="edit" id="9Bv-sw-Cbn"/>
                                             <barButtonItem key="rightBarButtonItem" systemItem="add" id="jG7-v6-4Y9">
                                                 <connections>
                                                     <action selector="addAction:" destination="Nb5-3I-KQz" id="SmH-Wj-hUL"/>
@@ -399,7 +401,7 @@
                                     </items>
                                 </navigationBar>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.97507399320602417" green="0.97509676218032837" blue="0.97508448362350464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCell" id="cAg-0T-zBl" customClass="ToDoCell">

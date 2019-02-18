@@ -27,8 +27,9 @@ class ChangeCityVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        cityNameTxtField.becomeFirstResponder()
+
     }
-    //    To Do: Alert with error, if entered unexisting city name
 
     @IBAction func changeCityNameBtn(_ sender: UIButton) {
         let cityName = cityNameTxtField.text!

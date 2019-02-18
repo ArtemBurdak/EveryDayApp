@@ -139,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB4ABE621FE3BCB00720839 /* AppDelegate.swift */,
-				ACB4ABF821FE3C5200720839 /* View */,
+				ACB4ABEA21FE3BCB00720839 /* Main.storyboard */,
 				AC5B0C31220CEDFC0072913B /* CurrencyController */,
 				ACB4ABF921FE3C6500720839 /* WeatherControllers */,
 				AC5B0C32220DE5880072913B /* ToDoListController */,
@@ -149,14 +149,6 @@
 				ACB4ABF221FE3BCC00720839 /* Info.plist */,
 			);
 			path = EveryDayApp;
-			sourceTree = "<group>";
-		};
-		ACB4ABF821FE3C5200720839 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				ACB4ABEA21FE3BCB00720839 /* Main.storyboard */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		ACB4ABF921FE3C6500720839 /* WeatherControllers */ = {

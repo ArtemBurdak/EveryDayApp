@@ -11,32 +11,46 @@ import Foundation
 struct Item: Codable {
     var title: String = ""
     var done: Bool = false
-    var favorite: Bool = false
 }
 
+enum ItemManager {
 
-//enum ItemesManager {
-//
-//    static func getStoredItems() -> [Item] {
-//        if let data = UserDefaults.standard.value(forKey:"favorites") as? Data {
-//            let items = try? PropertyListDecoder().decode(Array<Item>.self, from: data)
-//            return items ?? []
-//        } else {
-//            return []
-//        }
-//    }
-//
-//    static func saveItems(_ item: Item) {
-//        var storedItems = getStoredItems()
-//        storedItems.append(item)
-//
-//        UserDefaults.standard.set(try? PropertyListEncoder().encode(storedItems), forKey: "items")
-//    }
-//
-//    static func removeFavorite(_ item: Item) {
-//        let storedItems = getStoredItems()
-//        let filtered = storedItems.filter { $0.done != item.done }
-//
-//        UserDefaults.standard.set(try? PropertyListEncoder().encode(filtered), forKey: "items")
-//    }
-//}
+    static func getStoredItems() -> [Item] {
+        if let data = UserDefaults.standard.value(forKey:"items") as? Data {
+            let items = try? PropertyListDecoder().decode(Array<Item>.self, from: data)
+            return items ?? []
+        } else {
+            return []
+        }
+    }
+
+    static func refreshItem(_ item: Item, items: [Item]) {
+        var udatedItems = items
+
+        for (index, var itemCheck) in items.enumerated() {
+
+            if itemCheck.title == item.title {
+
+                itemCheck.done = !item.done
+
+                udatedItems[index] = itemCheck
+            }
+        }
+
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(udatedItems), forKey: "items")
+    }
+
+    static func saveItem(_ item: Item) {
+        var savedItems = getStoredItems()
+        savedItems.append(item)
+
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(savedItems), forKey: "items")
+    }
+
+    static func removeItem(_ item: Item) {
+        let savedItems = getStoredItems()
+        let filtered = savedItems.filter { $0.title != item.title }
+
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(filtered), forKey: "items")
+    }
+}

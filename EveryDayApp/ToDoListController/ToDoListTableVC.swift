@@ -12,24 +12,10 @@ class ToDoListTableVC: UITableViewController {
 
     var items = [Item]()
 
-//    let defoults = UserDefaults.standard
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.Plist")
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var newItem = Item()
-        newItem.title = "kjkbjkbk"
-        items.append(newItem)
-
-//        if let items = defoults.array(forKey: Constants.toDoListKey) as? [Item] {
-//            itemArray = items
-//        }
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(items), forKey: "items")
-
-        if let data = UserDefaults.standard.value(forKey:"items") as? Data {
-            let items = try? PropertyListDecoder().decode(Array<Item>.self, from: data)
-        }
+        updateItemsFromMemory()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,11 +36,22 @@ class ToDoListTableVC: UITableViewController {
         return cell
     }
 
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            items.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .left)
+//
+//            ItemManager.removeItem(items[indexPath.row])
+//            updateItemsFromMemory()
+//        }
+//    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        items[indexPath.row].done = !items[indexPath.row].done
+        ItemManager.refreshItem(items[indexPath.row], items: items)
 
-        tableView.reloadData()
+        updateItemsFromMemory()
+
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -69,9 +66,9 @@ class ToDoListTableVC: UITableViewController {
             var newItem = Item()
             newItem.title = textField.text!
 
-            self.items.append(newItem)
+            ItemManager.saveItem(newItem)
 
-            self.tableView.reloadData()
+            self.updateItemsFromMemory()
         }
 
         alert.addTextField { (alertTextField) in
@@ -82,5 +79,10 @@ class ToDoListTableVC: UITableViewController {
         alert.addAction(action)
 
         present(alert, animated: true, completion: nil)
+    }
+
+    func updateItemsFromMemory() {
+        items = ItemManager.getStoredItems()
+        tableView.reloadData()
     }
 }
