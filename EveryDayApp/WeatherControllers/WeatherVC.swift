@@ -64,6 +64,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate
             self.parce(json: data)
         }
     }
+    
     func showError() {
         let ac = UIAlertController(title: "Loading error", message: "Probem with loading", preferredStyle: .alert)
         ac.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { (_) in

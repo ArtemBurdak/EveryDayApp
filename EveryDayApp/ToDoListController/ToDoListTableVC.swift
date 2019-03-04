@@ -36,16 +36,6 @@ class ToDoListTableVC: UITableViewController {
         return cell
     }
 
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            items.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .left)
-//
-//            ItemManager.removeItem(items[indexPath.row])
-//            updateItemsFromMemory()
-//        }
-//    }
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         ItemManager.refreshItem(items[indexPath.row], items: items)

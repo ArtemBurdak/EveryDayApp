@@ -8,20 +8,6 @@
 
 import UIKit
 
-struct Currency: Codable {
-    let success: Bool
-    let terms: String
-    let privacy: String
-    let sourse = "USD"
-    let quotes: QuotesCurrency
-}
-
-struct QuotesCurrency: Codable {
-    var USDUAH: Double
-    var USDEUR: Double
-    var USDRUB: Double
-}
-
 class CurrencyVC: UIViewController {
 
     @IBOutlet weak var uahLabel: UILabel!

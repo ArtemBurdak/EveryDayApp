@@ -11,9 +11,10 @@
 		AC0983C9220C731700068805 /* WeatherStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0983C8220C731700068805 /* WeatherStruct.swift */; };
 		AC27030022146D76005364BB /* SwipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2702FF22146D76005364BB /* SwipeVC.swift */; };
 		AC5B0C34220DE5D40072913B /* ToDoListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B0C33220DE5D40072913B /* ToDoListTableVC.swift */; };
-		AC5B0C37220F005E0072913B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B0C36220F005E0072913B /* Item.swift */; };
+		AC5B0C37220F005E0072913B /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B0C36220F005E0072913B /* ItemManager.swift */; };
 		AC620B25220A1A7C00D48A64 /* Utilits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC620B24220A1A7C00D48A64 /* Utilits.swift */; };
 		AC8786FE220A2D890000073E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8786FD220A2D890000073E /* Constants.swift */; };
+		AC998356222D760700FE0124 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC998355222D760700FE0124 /* CurrencyModel.swift */; };
 		AC9F05072205936A00CD4184 /* CurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F05062205936A00CD4184 /* CurrencyVC.swift */; };
 		ACB4ABE721FE3BCB00720839 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ABE621FE3BCB00720839 /* AppDelegate.swift */; };
 		ACB4ABE921FE3BCB00720839 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4ABE821FE3BCB00720839 /* WeatherVC.swift */; };
@@ -30,9 +31,10 @@
 		AC0983C8220C731700068805 /* WeatherStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStruct.swift; sourceTree = "<group>"; };
 		AC2702FF22146D76005364BB /* SwipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeVC.swift; sourceTree = "<group>"; };
 		AC5B0C33220DE5D40072913B /* ToDoListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableVC.swift; sourceTree = "<group>"; };
-		AC5B0C36220F005E0072913B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		AC5B0C36220F005E0072913B /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
 		AC620B24220A1A7C00D48A64 /* Utilits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilits.swift; sourceTree = "<group>"; };
 		AC8786FD220A2D890000073E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AC998355222D760700FE0124 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		AC9F05062205936A00CD4184 /* CurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVC.swift; sourceTree = "<group>"; };
 		ACB4ABE321FE3BCB00720839 /* EveryDayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EveryDayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB4ABE621FE3BCB00720839 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				AC2702FF22146D76005364BB /* SwipeVC.swift */,
-				AC5B0C35220F00060072913B /* ToDoList */,
+				AC998355222D760700FE0124 /* CurrencyModel.swift */,
 				AC5B0C30220CEDDB0072913B /* Constants and Utilits */,
 				AC0983C7220C72AE00068805 /* WeatherModel */,
 			);
@@ -105,16 +107,17 @@
 			isa = PBXGroup;
 			children = (
 				AC5B0C33220DE5D40072913B /* ToDoListTableVC.swift */,
+				AC5B0C35220F00060072913B /* ToDoListManage */,
 			);
 			path = ToDoListController;
 			sourceTree = "<group>";
 		};
-		AC5B0C35220F00060072913B /* ToDoList */ = {
+		AC5B0C35220F00060072913B /* ToDoListManage */ = {
 			isa = PBXGroup;
 			children = (
-				AC5B0C36220F005E0072913B /* Item.swift */,
+				AC5B0C36220F005E0072913B /* ItemManager.swift */,
 			);
-			path = ToDoList;
+			path = ToDoListManage;
 			sourceTree = "<group>";
 		};
 		ACB4ABDA21FE3BCB00720839 = {
@@ -299,9 +302,10 @@
 				AC5B0C34220DE5D40072913B /* ToDoListTableVC.swift in Sources */,
 				AC620B25220A1A7C00D48A64 /* Utilits.swift in Sources */,
 				ACD3D2B02212F4DB00A73713 /* ChangeCityVC.swift in Sources */,
+				AC998356222D760700FE0124 /* CurrencyModel.swift in Sources */,
 				ACB4ABE721FE3BCB00720839 /* AppDelegate.swift in Sources */,
 				AC0983C9220C731700068805 /* WeatherStruct.swift in Sources */,
-				AC5B0C37220F005E0072913B /* Item.swift in Sources */,
+				AC5B0C37220F005E0072913B /* ItemManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
