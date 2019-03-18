@@ -107,17 +107,17 @@
 			isa = PBXGroup;
 			children = (
 				AC5B0C33220DE5D40072913B /* ToDoListTableVC.swift */,
-				AC5B0C35220F00060072913B /* ToDoListManage */,
+				AC5B0C35220F00060072913B /* ToDoListManager */,
 			);
 			path = ToDoListController;
 			sourceTree = "<group>";
 		};
-		AC5B0C35220F00060072913B /* ToDoListManage */ = {
+		AC5B0C35220F00060072913B /* ToDoListManager */ = {
 			isa = PBXGroup;
 			children = (
 				AC5B0C36220F005E0072913B /* ItemManager.swift */,
 			);
-			path = ToDoListManage;
+			path = ToDoListManager;
 			sourceTree = "<group>";
 		};
 		ACB4ABDA21FE3BCB00720839 = {
