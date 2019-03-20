@@ -10,13 +10,13 @@ import UIKit
 
 class CurrencyVC: UIViewController {
 
-    @IBOutlet weak var uahLabel: UILabel!
-    @IBOutlet weak var eurLabel: UILabel!
-    @IBOutlet weak var rubLabel: UILabel!
-    @IBOutlet weak var updateLabel: UILabel!
-    @IBOutlet weak var multiplierBtn: UIButton!
-    @IBOutlet weak var updateLabelConstraint: NSLayoutConstraint!
-    @IBOutlet weak var updateBtnConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var uahLabel: UILabel!
+    @IBOutlet private weak var eurLabel: UILabel!
+    @IBOutlet private weak var rubLabel: UILabel!
+    @IBOutlet private weak var updateLabel: UILabel!
+    @IBOutlet private weak var multiplierBtn: UIButton!
+    @IBOutlet private weak var updateLabelConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var updateBtnConstraint: NSLayoutConstraint!
 
     var tabBarHeigh: CGFloat?
     var currency: Currency?
@@ -44,10 +44,8 @@ class CurrencyVC: UIViewController {
 
         DispatchQueue.global(qos :.background).async {
 
-            //urlString converting to URL
             guard let url: URL = URL(string: urlString) else {return}
 
-            //Using created URL
             if let data = try? Data(contentsOf: url) {
                 self.parce(json: data)
                 return
@@ -75,7 +73,6 @@ class CurrencyVC: UIViewController {
             self.updateUI(curency: currency!)
 
             DispatchQueue.main.async {
-                //updatedTime
                 let date = Date()
                 let formatter = DateFormatter()
                 formatter.dateFormat = "dd.MM.yyyy HH:mm:ss"

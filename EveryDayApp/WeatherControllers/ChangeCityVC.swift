@@ -64,8 +64,7 @@ class ChangeCityVC: UIViewController {
 
     func showError() {
         let ac = UIAlertController(title: "Wrong city name", message: "Please, try another city name", preferredStyle: .alert)
-        ac.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { (_) in
-        }))
-        self.present(ac, animated: true)
+        ac.addAction(UIAlertAction.init(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 }

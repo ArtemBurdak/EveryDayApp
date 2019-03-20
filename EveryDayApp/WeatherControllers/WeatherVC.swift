@@ -12,11 +12,11 @@ import Alamofire
 
 class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate {
 
-    @IBOutlet weak var imageWeatherStatus: UIImageView!
-    @IBOutlet weak var weatherConditionLbl: UILabel!
-    @IBOutlet weak var tmpLbl: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var backgroundDayTimeImage: UIImageView!
+    @IBOutlet private weak var imageWeatherStatus: UIImageView!
+    @IBOutlet private weak var weatherConditionLbl: UILabel!
+    @IBOutlet private weak var tmpLbl: UILabel!
+    @IBOutlet private weak var cityLabel: UILabel!
+    @IBOutlet private weak var backgroundDayTimeImage: UIImageView!
     
 
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
@@ -37,8 +37,8 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
-        if location.horizontalAccuracy > 0 { //if horizontallAcuracy is below 0, data is wrong
-            locationManager.stopUpdatingLocation() //stops udating when got result
+        if location.horizontalAccuracy > 0 {
+            locationManager.stopUpdatingLocation()
 
             let latitude = String(location.coordinate.latitude)
             let longitude = String(location.coordinate.longitude)
