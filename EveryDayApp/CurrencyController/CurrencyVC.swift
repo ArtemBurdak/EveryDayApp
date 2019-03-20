@@ -140,7 +140,7 @@ class CurrencyVC: UIViewController {
         }
 
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            let textField = alert?.textFields![0]
             self.multiplierUSD = Double(textField!.text ?? "1.0") ?? 1
             self.multiplierBtn.setTitle("x \(abs(Int(self.multiplierUSD))) $", for: .normal)
             self.getJSONData(urlString: Constants.apiUrl)

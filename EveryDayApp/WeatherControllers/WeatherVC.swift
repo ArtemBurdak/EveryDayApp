@@ -17,7 +17,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, changeCityDelegate
     @IBOutlet private weak var tmpLbl: UILabel!
     @IBOutlet private weak var cityLabel: UILabel!
     @IBOutlet private weak var backgroundDayTimeImage: UIImageView!
-    
 
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
     let APP_ID = "185207b6e5f17e147d1a452b2faecae0"

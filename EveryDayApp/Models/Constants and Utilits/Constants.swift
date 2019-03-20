@@ -13,4 +13,4 @@ struct Constants {
     static let storedCurrencyKey = "savedCurrencys"
     static let toDoListKey = "ToDoListArray"
     static let toDoCellIdentifier = "ToDoCell"
-}
+} 

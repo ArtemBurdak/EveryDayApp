@@ -23,7 +23,7 @@ class ToDoListTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.toDoCellIdentifier , for: indexPath)
 
         let item = items[indexPath.row]
         cell.textLabel?.text = item.title
