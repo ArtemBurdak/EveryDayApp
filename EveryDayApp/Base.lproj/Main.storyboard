@@ -144,17 +144,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="de3-3i-13d">
-                                <rect key="frame" x="19" y="201" width="245" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="de3-3i-13d">
+                                <rect key="frame" x="16" y="200" width="236" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8LI-ly-Dpb"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ba4-YD-4aK">
-                                <rect key="frame" x="298" y="201" width="70" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ba4-YD-4aK">
+                                <rect key="frame" x="289" y="200" width="70" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="442-gb-4j9"/>
+                                    <constraint firstAttribute="height" constant="30" id="Mfb-Me-oaH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Enter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,9 +168,12 @@
                                     <action selector="changeCityNameBtn:" destination="SOT-qV-Fe7" eventType="touchUpInside" id="hyQ-CS-68Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiI-Se-1gz">
-                                <rect key="frame" x="16" y="65" width="96" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiI-Se-1gz">
+                                <rect key="frame" x="16" y="65" width="96" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="9ao-BD-TKz"/>
+                                    <constraint firstAttribute="width" constant="96" id="ev1-Je-igL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
@@ -174,6 +182,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uiI-Se-1gz" firstAttribute="top" secondItem="CTF-TV-boz" secondAttribute="top" constant="45" id="1Xn-0D-J9D"/>
+                            <constraint firstItem="CTF-TV-boz" firstAttribute="trailing" secondItem="ba4-YD-4aK" secondAttribute="trailing" constant="16" id="Cyg-Rb-iAz"/>
+                            <constraint firstItem="uiI-Se-1gz" firstAttribute="leading" secondItem="CTF-TV-boz" secondAttribute="leading" constant="16" id="FTD-1w-IcX"/>
+                            <constraint firstItem="ba4-YD-4aK" firstAttribute="top" secondItem="CTF-TV-boz" secondAttribute="top" constant="180" id="al4-zM-wB9"/>
+                            <constraint firstItem="de3-3i-13d" firstAttribute="top" secondItem="uiI-Se-1gz" secondAttribute="bottom" constant="80" id="cvB-Tc-D6H"/>
+                            <constraint firstItem="de3-3i-13d" firstAttribute="leading" secondItem="CTF-TV-boz" secondAttribute="leading" constant="16" id="v6q-cE-m5K"/>
+                            <constraint firstItem="ba4-YD-4aK" firstAttribute="leading" secondItem="de3-3i-13d" secondAttribute="trailing" constant="37" id="xXl-Zl-aBD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CTF-TV-boz"/>
                     </view>
                     <connections>
