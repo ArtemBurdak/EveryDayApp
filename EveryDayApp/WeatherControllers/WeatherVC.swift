@@ -36,11 +36,11 @@ class WeatherVC: UIViewController, GMSAutocompleteViewControllerDelegate {
                         parameters: [String : String]) {
         Alamofire.request(url, method: .get,
                           parameters: parameters).validate().responseJSON {
-            response in
-            guard
-                let data = response.data
-                else { self.showError(); return }
-            self.parce(json: data)
+                            response in
+                            guard
+                                let data = response.data
+                                else { self.showError(); return }
+                            self.parce(json: data)
         }
     }
 
@@ -76,17 +76,6 @@ class WeatherVC: UIViewController, GMSAutocompleteViewControllerDelegate {
         acController.delegate = self
         present(acController, animated: true, completion: nil)
     }
-//
-//    func newCityName(data: Data) {
-//        parce(json: data)
-//    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "changeCity" {
-//            let destinationVC = segue.destination as! ChangeCityVC
-//            destinationVC.delegate = self
-//        }
-//    }
 }
 
 extension WeatherVC: CLLocationManagerDelegate {
@@ -100,8 +89,8 @@ extension WeatherVC: CLLocationManagerDelegate {
             let longitude = String(location.coordinate.longitude)
 
             let parameters: [String: String] = ["lat" : latitude,
-                                                 "lon" : longitude,
-                                                 "appid" : Constants.weatherKey]
+                                                "lon" : longitude,
+                                                "appid" : Constants.weatherKey]
 
             getWeatherData(url: Constants.weatherUrl, parameters : parameters)
 
