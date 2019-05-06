@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-protocol changeCityDelegate {
+protocol ChangeCityDelegate {
     func newCityName(data: Data)
 }
 
@@ -20,7 +20,7 @@ class ChangeCityVC: UIViewController {
 
     var weatherJson: WeatherJson?
 
-    var delegate: changeCityDelegate?
+    var delegate: ChangeCityDelegate?
 
     @IBOutlet weak var cityNameTxtField: UITextField!
 

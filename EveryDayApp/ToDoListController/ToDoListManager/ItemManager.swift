@@ -15,13 +15,12 @@ struct Item: Codable {
 
 enum ItemManager {
 
-    static func getStoredItems() -> [Item] {
-        if let data = UserDefaults.standard.value(forKey:"items") as? Data {
-            let items = try? PropertyListDecoder().decode(Array<Item>.self, from: data)
-            return items ?? []
-        } else {
-            return []
-        }
+    static func getStoredItems() -> [Item]? {
+        guard
+            let data = UserDefaults.standard.value(forKey:"items") as? Data
+            else { return [] }
+
+        return try? PropertyListDecoder().decode([Item].self, from: data)
     }
 
     static func refreshItem(_ item: Item, items: [Item]) {
@@ -41,14 +40,20 @@ enum ItemManager {
     }
 
     static func saveItem(_ item: Item) {
-        var savedItems = getStoredItems()
+        guard
+            var savedItems = getStoredItems()
+            else { return }
+
         savedItems.append(item)
 
         UserDefaults.standard.set(try? PropertyListEncoder().encode(savedItems), forKey: "items")
     }
 
     static func removeItem(_ item: Item) {
-        let savedItems = getStoredItems()
+        guard
+            let savedItems = getStoredItems()
+            else { return }
+
         let filtered = savedItems.filter { $0.title != item.title }
 
         UserDefaults.standard.set(try? PropertyListEncoder().encode(filtered), forKey: "items")

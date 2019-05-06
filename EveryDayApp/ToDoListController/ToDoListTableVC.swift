@@ -81,7 +81,14 @@ class ToDoListTableVC: UITableViewController {
     }
 
     func updateItemsFromMemory() {
-        items = ItemManager.getStoredItems()
-        tableView.reloadData()
+        ItemManager.getStoredItems().map {
+            self.items = $0
+            tableView.reloadData()
+        }
+
+//        if let items = ItemManager.getStoredItems() {
+//            self.items = items
+//            tableView.reloadData()
+//        }
     }
 }

@@ -49,19 +49,3 @@ struct CountryAndSun: Codable {
     let sunrise: Int
     let sunset: Int
 }
-
-//enum weaterImage: String {
-//    case clearSky
-//    case clouds
-//    case rain
-////    case scatteredClouds
-//
-//    var description : String {
-//        switch self {
-//        // Use Internationalization, as appropriate.
-//        case .clearSky: return "BGClearSky"
-//        case .clouds: return "BGFewClouds"
-//        case .rain: return "BGRain"
-//        }
-//    }
-//}

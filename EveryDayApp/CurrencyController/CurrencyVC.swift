@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let defaultAlpha: CGFloat = 1.0
+
 class CurrencyVC: UIViewController {
 
     @IBOutlet private weak var uahLabel: UILabel!
@@ -47,8 +49,7 @@ class CurrencyVC: UIViewController {
             guard let url: URL = URL(string: urlString) else {return}
 
             if let data = try? Data(contentsOf: url) {
-                self.parce(json: data)
-                return
+                self.parce(data: data)
             } else {
                 self.showError()
             }
@@ -61,16 +62,17 @@ class CurrencyVC: UIViewController {
             self.updateLabel.text = "Loading error"
             self.updateLabel.textColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         }))
-        present(ac, animated: true)
+        self.present(ac, animated: true)
     }
 
-    func parce(json: Data) {
+    func parce(data: Data) {
         let decoder = JSONDecoder()
 
-        if let jsonValues = try? decoder.decode(Currency.self, from: json) {
-            currency = jsonValues
+        if let jsonValues = try? decoder.decode(Currency.self, from: data) {
+            self.currency = jsonValues
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(self.currency), forKey: Constants.storedCurrencyKey)
 
-            self.updateUI(curency: currency!)
+            self.updateUI(curency: jsonValues)
 
             DispatchQueue.main.async {
                 let date = Date()
@@ -84,24 +86,24 @@ class CurrencyVC: UIViewController {
     }
 
     func updateUI(curency: Currency) {
+        let usdUsd = abs(self.multiplierUSD * (self.currency?.quotes.USDUAH ?? .zero))
+        let usdEur = abs(self.multiplierUSD * (self.currency?.quotes.USDEUR ?? .zero))
+        let usdRub = abs(self.multiplierUSD * (self.currency?.quotes.USDRUB ?? .zero))
+
+        let strUsd = String(format: "%.2f", usdUsd)
+        let strEur = String(format: "%.2f", usdEur)
+        let strRub = String(format: "%.2f", usdRub)
 
         DispatchQueue.main.async {
-
-            let usdUsd = abs(self.multiplierUSD * (self.currency?.quotes.USDUAH ?? 0))
-            let usdEur = abs(self.multiplierUSD * (self.currency?.quotes.USDEUR ?? 0))
-            let usdRub = abs(self.multiplierUSD * (self.currency?.quotes.USDRUB ?? 0))
-
-            self.uahLabel.text = String(format: "%.2f", usdUsd)
-            self.eurLabel.text = String(format: "%.2f", usdEur)
-            self.rubLabel.text = String(format: "%.2f", usdRub)
+            self.uahLabel.text = strUsd
+            self.eurLabel.text = strEur
+            self.rubLabel.text = strRub
 
             UIView.animate(withDuration: 1) {
-                self.uahLabel.alpha = 1
-                self.eurLabel.alpha = 1
-                self.rubLabel.alpha = 1
+                self.uahLabel.alpha = defaultAlpha
+                self.eurLabel.alpha = defaultAlpha
+                self.rubLabel.alpha = defaultAlpha
             }
-
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(self.currency), forKey: Constants.storedCurrencyKey)
         }
     }
 
@@ -140,7 +142,7 @@ class CurrencyVC: UIViewController {
         }
 
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            let textField = alert?.textFields![0]
+            let textField = alert?.textFields?[0]
             self.multiplierUSD = Double(textField!.text ?? "1.0") ?? 1
             self.multiplierBtn.setTitle("x \(abs(Int(self.multiplierUSD))) $", for: .normal)
             self.getJSONData(urlString: Constants.apiUrl)

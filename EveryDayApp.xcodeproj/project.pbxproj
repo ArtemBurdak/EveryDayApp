@@ -183,6 +183,7 @@
 				ACB4ABE021FE3BCB00720839 /* Frameworks */,
 				ACB4ABE121FE3BCB00720839 /* Resources */,
 				DEF700DBE684E8CD3B05FCD3 /* [CP] Embed Pods Frameworks */,
+				07151BC514E4E0FBA77937B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +241,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		07151BC514E4E0FBA77937B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp-resources.sh",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A88070C9F7B44AE99E12DC88 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,7 +295,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EveryDayApp/Pods-EveryDayApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Disk/Disk.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeVC/SwipeVC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -280,7 +302,6 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Disk.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeVC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

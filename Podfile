@@ -8,6 +8,6 @@ target 'EveryDayApp' do
   # Pods for EveryDayApp
     pod 'Alamofire'
     pod 'SwipeVC'
-	pod 'Disk'
+    pod 'GooglePlaces'
 
 end

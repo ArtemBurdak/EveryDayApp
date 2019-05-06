@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (4.8.0)
-  - Disk (0.4.0)
+  - GoogleMaps/Base (3.0.3)
+  - GooglePlaces (3.0.3):
+    - GoogleMaps/Base (= 3.0.3)
   - SwipeVC (0.2.3)
 
 DEPENDENCIES:
   - Alamofire
-  - Disk
+  - GooglePlaces
   - SwipeVC
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - Disk
+    - GoogleMaps
+    - GooglePlaces
     - SwipeVC
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  Disk: ef2956657d5bb56034b38b29b352170165226440
+  GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
+  GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
   SwipeVC: cb182db641a0fc20ebe829cd269b85a196fa1e90
 
-PODFILE CHECKSUM: 0972399b3c6d72f1a5046ee2663e2e1543656e5b
+PODFILE CHECKSUM: c5b9d4228f14519bd1d939decf5e060f0f27e9f1
 
 COCOAPODS: 1.5.3
