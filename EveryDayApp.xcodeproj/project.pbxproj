@@ -21,7 +21,6 @@
 		ACB4ABEC21FE3BCB00720839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABEA21FE3BCB00720839 /* Main.storyboard */; };
 		ACB4ABEE21FE3BCC00720839 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABED21FE3BCC00720839 /* Assets.xcassets */; };
 		ACB4ABF121FE3BCC00720839 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABEF21FE3BCC00720839 /* LaunchScreen.storyboard */; };
-		ACD3D2B02212F4DB00A73713 /* ChangeCityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3D2AF2212F4DB00A73713 /* ChangeCityVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,6 @@
 		ACB4ABED21FE3BCC00720839 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB4ABF021FE3BCC00720839 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB4ABF221FE3BCC00720839 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACD3D2AF2212F4DB00A73713 /* ChangeCityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				ACB4ABE821FE3BCB00720839 /* WeatherVC.swift */,
-				ACD3D2AF2212F4DB00A73713 /* ChangeCityVC.swift */,
 			);
 			path = WeatherControllers;
 			sourceTree = "<group>";
@@ -322,7 +319,6 @@
 				ACB4ABE921FE3BCB00720839 /* WeatherVC.swift in Sources */,
 				AC5B0C34220DE5D40072913B /* ToDoListTableVC.swift in Sources */,
 				AC620B25220A1A7C00D48A64 /* Utilits.swift in Sources */,
-				ACD3D2B02212F4DB00A73713 /* ChangeCityVC.swift in Sources */,
 				AC998356222D760700FE0124 /* CurrencyModel.swift in Sources */,
 				ACB4ABE721FE3BCB00720839 /* AppDelegate.swift in Sources */,
 				AC0983C9220C731700068805 /* WeatherStruct.swift in Sources */,
