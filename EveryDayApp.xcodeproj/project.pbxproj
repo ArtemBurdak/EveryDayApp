@@ -21,6 +21,7 @@
 		ACB4ABEC21FE3BCB00720839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABEA21FE3BCB00720839 /* Main.storyboard */; };
 		ACB4ABEE21FE3BCC00720839 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABED21FE3BCC00720839 /* Assets.xcassets */; };
 		ACB4ABF121FE3BCC00720839 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB4ABEF21FE3BCC00720839 /* LaunchScreen.storyboard */; };
+		ACC9893A22808FB300009D83 /* WeatherVC+Extencion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC9893922808FB300009D83 /* WeatherVC+Extencion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		ACB4ABED21FE3BCC00720839 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB4ABF021FE3BCC00720839 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB4ABF221FE3BCC00720839 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACC9893922808FB300009D83 /* WeatherVC+Extencion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherVC+Extencion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB4ABE821FE3BCB00720839 /* WeatherVC.swift */,
+				ACC9893922808FB300009D83 /* WeatherVC+Extencion.swift */,
 			);
 			path = WeatherControllers;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				AC8786FE220A2D890000073E /* Constants.swift in Sources */,
 				AC27030022146D76005364BB /* SwipeVC.swift in Sources */,
 				AC9F05072205936A00CD4184 /* CurrencyVC.swift in Sources */,
+				ACC9893A22808FB300009D83 /* WeatherVC+Extencion.swift in Sources */,
 				ACB4ABE921FE3BCB00720839 /* WeatherVC.swift in Sources */,
 				AC5B0C34220DE5D40072913B /* ToDoListTableVC.swift in Sources */,
 				AC620B25220A1A7C00D48A64 /* Utilits.swift in Sources */,
